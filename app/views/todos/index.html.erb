@@ -1,0 +1,45 @@
+
+<div class="container">
+
+  <h1>ToDo</h1>
+
+    <% @todos.each do |s| %>
+
+    <div class="well">
+
+        <div class="row">
+          <div class="col-lg-4">
+              description: <%= s.description %>
+          </div>
+          <div class="col-lg-3">
+            completed:
+            <%
+              if s.completed
+                flag = "checked"
+              else
+                flag = ""
+              end
+            %>
+            <input type="checkbox" aria-label="" <%= flag %>  >
+          </div>
+
+          <div class="col-lg-1">
+            <%= link_to 'Show', s , class:'btn btn-info'%>
+          </div>
+          <div class="col-lg-1">
+            <%= link_to 'Edit', editar_path(s) , class:'btn btn-success'%>
+          </div>
+          <div class="col-lg-1">
+            <%= link_to 'Destroy', borrar_path(s), method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-danger'%>
+          </div>
+          <div class="col-lg-2">
+            <%= link_to 'Completar', completar_path(s), class:'btn btn-success'%>
+          </div>
+
+
+        </div><!-- /.row -->
+
+    </div>
+
+    <% end %>
+</div>

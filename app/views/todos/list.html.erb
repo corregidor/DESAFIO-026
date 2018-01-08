@@ -1,0 +1,29 @@
+
+<div class="container">
+
+  <h1>List</h1>
+
+  <div class="row">
+
+      <div class="col-lg-6">
+        <div class="well"><b>Tareas completadas</b></div>
+
+        <% @todos.each do |s| %>
+            <% if s.completed %>
+              <div class="well"><%= s.description %></div>
+            <% end %>
+        <% end %>
+      </div>
+      <div class="col-lg-6">
+        <div class="well"><b>Tareas incompletas</b></div>
+        <% @todos.each do |s| %>
+            <% if !s.completed %>
+              <div class="well"><%= s.description %></div>
+            <% end %>
+        <% end %>
+      </div>
+
+      </div><!-- /.row -->
+
+
+</div>

@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h1>New</h1>
+
+  <%= form_with model: @todo, local:true do |f| %>
+
+
+    <div class="row">
+      <div class="col-lg-6">
+
+        <div class="input-group">
+          <%= f.label :description, "description" , class:'input-group-addon' %>
+          <%= f.text_field :description , class:'form-control' %>
+        </div>
+
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+
+        <%= f.label :completed, "completed" , class:'label label-default' %>
+        <%= f.check_box :completed  %>
+
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+      <hr>
+      <%= f.submit "Enviar"  , class:'btn btn-info'%>
+
+  <% end %>
+
+</div>
